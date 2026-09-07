@@ -17,7 +17,8 @@
 
     services.asusd.enable = true;
 
-    networking.networkmanager.wifi.powersave = true;
+    networking.networkmanager.wifi.powersave = false;
+    boot.kernelParams = [ "cfg80211.ieee80211_regdom=PL" ];
 
     fileSystems = {
       "/" = {
