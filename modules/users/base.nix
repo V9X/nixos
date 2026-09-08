@@ -15,6 +15,7 @@ let
     helix
     firefox
     fish
+    foot
     gaming
     git
     legacy
