@@ -12,6 +12,11 @@
         nhs = "nh home switch";
 
         c = "codium ./";
+
+        gcm = {
+          expansion = "git commit -m \"%\"";
+          setCursor = true;
+        };
       };
     };
   };
