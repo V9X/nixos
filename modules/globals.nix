@@ -1,6 +1,9 @@
 {
   _module.args.globals = {
     colors = {
+      bg = "#000000";
+      fg = "#ffffff";
+
       # selenized
       white = "#b9b9b9";
       black = "#404040";
@@ -25,8 +28,13 @@
       br_violet = "#b891f5";
     };
 
+    opacity = 0.8;
+
     font = {
       mono = "MonaspiceAr Nerd Font Mono";
+      sans = "Noto Sans";
+      serif = "Noto Serif";
+
       monoFeatures = [
         "liga"
         "calt"
@@ -35,6 +43,8 @@
         "ss03"
         "ss07"
       ];
+
+      size = 10;
     };
 
     keys = {
