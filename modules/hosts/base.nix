@@ -14,6 +14,7 @@
       thunderbolt
 
       fonts
+      keyboard
       locale
       network
       removable
