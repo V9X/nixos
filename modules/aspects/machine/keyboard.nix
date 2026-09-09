@@ -16,6 +16,8 @@
             "${globals.keys.down}" = "down";
             "${globals.keys.up}" = "up";
             "${globals.keys.right}" = "right";
+            "w" = "leftcontrol";
+            "rightshift" = "capslock";
           };
         };
       };
