@@ -30,6 +30,7 @@ let
     thunar
     vlc
     wayland
+    yazi
     docker
   ];
 in
