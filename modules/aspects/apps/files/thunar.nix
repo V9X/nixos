@@ -49,6 +49,15 @@ in
       "last-menubar-visible" = false;
     };
 
+    xdg.configFile."Thunar/accels.scm" = {
+      force = true;
+
+      text = ''
+        ; thunar GtkAccelMap rc-file  -*- scheme -*-
+        (gtk_accel_path "<Actions>/ThunarWindow/show-hidden" "period")
+      '';
+    };
+
     xdg.configFile."Thunar/uca.xml" = {
       force = true;
 
