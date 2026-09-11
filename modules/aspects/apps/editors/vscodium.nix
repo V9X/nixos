@@ -30,6 +30,7 @@
           "editor.fontFamily" = "'${globals.font.mono}', monospace";
           "editor.fontLigatures" = lib.concatMapStringsSep ", " (f: "'${f}'") globals.font.monoFeatures;
           "terminal.integrated.fontFamily" = "'${globals.font.mono}', monospace";
+          "terminal.integrated.enableKittyKeyboardProtocol" = false;
 
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nil";
