@@ -15,7 +15,6 @@ let
     helix
     firefox
     fish
-    # foot
     gaming
     ghostty
     git
