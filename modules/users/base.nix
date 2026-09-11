@@ -31,6 +31,7 @@ let
     vlc
     wayland
     yazi
+    zoxide
     docker
   ];
 in
