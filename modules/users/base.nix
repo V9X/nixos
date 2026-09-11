@@ -15,8 +15,9 @@ let
     helix
     firefox
     fish
-    foot
+    # foot
     gaming
+    ghostty
     git
     legacy
     mime
