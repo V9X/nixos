@@ -26,6 +26,7 @@
 
         userSettings = {
           "workbench.colorTheme" = "Dark Modern";
+          "window.openFilesInNewWindow" = "default";
 
           "editor.fontFamily" = "'${globals.font.mono}', monospace";
           "editor.fontLigatures" = lib.concatMapStringsSep ", " (f: "'${f}'") globals.font.monoFeatures;
