@@ -29,7 +29,7 @@
           "window.openFilesInNewWindow" = "default";
 
           "editor.fontFamily" = "'${globals.font.mono}', monospace";
-          "editor.fontLigatures" = lib.concatMapStringsSep ", " (f: "'${f}'") globals.font.monoFeatures;
+          "editor.fontLigatures" = lib.concatMapStringsSep ", " (f: "'${f}'") globals.font.mono_features;
           "terminal.integrated.fontFamily" = "'${globals.font.mono}', monospace";
           "terminal.integrated.enableKittyKeyboardProtocol" = false;
 

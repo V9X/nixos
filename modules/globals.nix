@@ -35,7 +35,7 @@
       sans = "Noto Sans";
       serif = "Noto Serif";
 
-      monoFeatures = [
+      mono_features = [
         "liga"
         "calt"
         "ss01"
