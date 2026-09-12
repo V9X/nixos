@@ -25,7 +25,6 @@ let
     python
     qbittorrent
     rust
-    starship
     swayimg
     thunar
     vlc
