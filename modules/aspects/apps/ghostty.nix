@@ -12,9 +12,9 @@ in
       clearDefaultKeybinds = true;
 
       settings = {
-        font-family = globals.font.mono;
+        font-family = globals.font.mono_wide;
         font-size = globals.font.size;
-        font-feature = globals.font.monoFeatures;
+        font-feature = globals.font.mono_features;
 
         mouse-hide-while-typing = true;
         cursor-style = "bar";

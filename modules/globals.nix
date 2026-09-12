@@ -32,6 +32,7 @@
 
     font = {
       mono = "MonaspiceAr Nerd Font Mono";
+      mono_wide = "MonaspiceAr Nerd Font";
       sans = "Noto Sans";
       serif = "Noto Serif";
 
