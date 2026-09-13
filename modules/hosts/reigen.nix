@@ -3,6 +3,7 @@
     imports = with inputs.self.modules.nixos; [
       machine
       v9x
+      luks
       #TODO: przenieść do base
       limine
     ];

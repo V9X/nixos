@@ -8,6 +8,7 @@
 
         maxGenerations = 10;
         enableEditor = false;
+        panicOnChecksumMismatch = true;
 
         secureBoot = {
           enable = true;
