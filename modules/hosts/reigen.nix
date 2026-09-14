@@ -45,7 +45,7 @@
         ];
       };
       "/boot" = {
-        device = "/dev/disk/by-label/boot";
+        device = "/dev/disk/by-partlabel//boot";
         fsType = "vfat";
         options = [ "umask=0077" ];
       };
