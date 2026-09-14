@@ -11,11 +11,6 @@
     networking.hostName = "reigen";
     system.stateVersion = "26.05";
 
-    boot.initrd.availableKernelModules = [
-      "thunderbolt"
-      "usb_storage"
-    ];
-
     services.asusd.enable = true;
 
     networking.networkmanager.wifi.powersave = false;
