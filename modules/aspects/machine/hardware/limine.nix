@@ -6,7 +6,7 @@
       limine = {
         enable = true;
 
-        maxGenerations = 10;
+        maxGenerations = 5;
         enableEditor = false;
         panicOnChecksumMismatch = true;
 
