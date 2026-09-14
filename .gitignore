@@ -1,5 +1,5 @@
 result
 result-*
 
-lp-efi-vars.fd
-lp.qcow2
+*-efi-vars.fd
+*.qcow2
