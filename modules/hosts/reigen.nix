@@ -4,11 +4,13 @@
       machine
       v9x
       luks
+      plymouth
       #TODO: przenieść do base
       limine
     ];
 
     networking.hostName = "reigen";
+    boot.plymouth.height = 1800;
     system.stateVersion = "26.05";
 
     services.asusd.enable = true;
