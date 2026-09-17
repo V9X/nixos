@@ -35,8 +35,10 @@ let
   ];
 in
 {
-  flake.modules.homeManager.user = {
+  flake.modules.homeManager.user = { pkgs, ... }: {
     imports = map (a: a.homeManager) chosen;
+
+    home.packages = with pkgs; [ brave-origin ];
   };
 
   flake.modules.nixos.user = {
