@@ -15,6 +15,7 @@
       luks
       plymouth
       limine
+      wooting
 
       fonts
       keyboard
