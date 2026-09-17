@@ -3,10 +3,6 @@
     imports = with inputs.self.modules.nixos; [
       machine
       v9x
-      luks
-      plymouth
-      #TODO: przenieść do base
-      limine
     ];
 
     networking.hostName = "reigen";
@@ -42,7 +38,7 @@
         ];
       };
       "/boot" = {
-        device = "/dev/disk/by-partlabel//boot";
+        device = "/dev/disk/by-partlabel/boot";
         fsType = "vfat";
         options = [ "umask=0077" ];
       };

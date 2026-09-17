@@ -12,6 +12,9 @@
       firmware
       memory
       thunderbolt
+      luks
+      plymouth
+      limine
 
       fonts
       keyboard

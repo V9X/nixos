@@ -8,17 +8,6 @@
     networking.hostName = "pion";
     system.stateVersion = "26.05";
 
-    #TODO: Do wywalenia jak będę tentegować limines
-    boot.loader.systemd-boot = {
-      enable = true;
-      configurationLimit = 10;
-    };
-
-    boot.initrd.availableKernelModules = [
-      "thunderbolt"
-      "usb_storage"
-    ];
-
     fileSystems = {
       "/" = {
         device = "/dev/disk/by-label/nixos";
@@ -43,7 +32,7 @@
         ];
       };
       "/boot" = {
-        device = "/dev/disk/by-label/boot";
+        device = "/dev/disk/by-partlabel/boot";
         fsType = "vfat";
         options = [ "umask=0077" ];
       };
