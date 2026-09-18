@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.audio = { pkgs, ... }: {
+  flake.modules.nixos.audio = { pkgs, user, ... }: {
     security.rtkit.enable = true;
 
     services.pipewire = {
@@ -10,5 +10,6 @@
     };
 
     environment.systemPackages = [ pkgs.alsa-utils ];
+    users.users.${user}.extraGroups = [ "audio" ];
   };
 }
