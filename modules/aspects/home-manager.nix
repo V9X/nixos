@@ -6,6 +6,7 @@
       useGlobalPkgs = true;
       useUserPackages = true;
       backupFileExtension = "bf";
+      overwriteBackup = true;
     };
   };
 }
