@@ -22,6 +22,7 @@
       locale
       network
       removable
+      kernel
     ];
   };
 }
