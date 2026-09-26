@@ -31,7 +31,7 @@ let
     wayland
     yazi
     zoxide
-    docker
+    virtualisation
   ];
 in
 {
