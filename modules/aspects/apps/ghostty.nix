@@ -27,6 +27,7 @@ in
 
         window-padding-balance = true;
         window-padding-color = "extend";
+        window-inherit-working-directory = false;
         resize-overlay = "never";
 
         background-opacity = globals.opacity;
@@ -64,9 +65,16 @@ in
       };
     };
 
+    xdg.desktopEntries.ghostty-new-window = {
+      name = "Ghostty";
+      exec = "ghostty +new-window";
+      noDisplay = true;
+      categories = [ "TerminalEmulator" ];
+    };
+
     xdg.terminal-exec = {
       enable = true;
-      settings.default = [ "com.mitchellh.ghostty.desktop" ];
+      settings.default = [ "ghostty-new-window.desktop" ];
     };
   };
 }
