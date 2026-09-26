@@ -80,6 +80,8 @@ in
               "source.organizeImports.ruff" = "explicit";
             };
           };
+
+          "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
         };
       };
     };
