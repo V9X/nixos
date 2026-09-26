@@ -2,45 +2,47 @@
   flake.modules.homeManager.claude =
     { pkgs, ... }:
     let
-      image = pkgs.dockerTools.buildImage {
+      image = pkgs.dockerTools.buildLayeredImage {
         name = "claude-sandbox";
         tag = "latest";
+        contents = with pkgs.dockerTools; [
+          binSh
+          usrBinEnv
+          fakeNss
+        ];
+        includeStorePaths = false;
+        compressor = "none";
       };
     in
     {
       home.packages = [
         (pkgs.writeShellScriptBin "claude" ''
-          mkdir -p "$HOME/.claude" "$HOME/.cache/claude-sandbox/nix"
+          [ -d .git ] || { echo ".git not found" >&2; exit 1; }
+
+          mkdir -p "$HOME/.claude"
           touch "$HOME/.claude.json"
 
-          docker load -i ${image} >/dev/null
+          podman load -q -i ${image} >/dev/null
 
-          tty=""
-          [ -t 0 ] && tty="-t"
-
-          user_name="$(id -un)"
-          user_id="$(id -u)"
-          user_group_id="$(id -g)"
-
-          exec docker run --rm --init -i $tty \
-            --user "$user_id:$user_group_id" \
-            --mount "type=tmpfs,destination=$HOME,tmpfs-mode=1777" \
-            --mount "type=tmpfs,destination=$HOME/.cache,tmpfs-mode=1777" \
-            --mount "type=tmpfs,destination=/tmp,tmpfs-mode=1777" \
+          exec podman run --rm --init --pull=never -i \
+            --tty="$([ -t 0 ] && echo true || echo false)" \
+            --tz=local \
+            --tmpfs /tmp \
             -v /nix:/nix:ro \
-            -v /run/current-system:/run/current-system:ro \
-            -v "/etc/profiles/per-user/$user_name:/etc/profiles/per-user/$user_name:ro" \
             -v /etc/nix/nix.conf:/etc/nix/nix.conf:ro \
             -v /etc/nix/registry.json:/etc/nix/registry.json:ro \
-            -v /etc/passwd:/etc/passwd:ro \
-            -v /etc/group:/etc/group:ro \
-            -v "$HOME/.claude:$HOME/.claude" \
-            -v "$HOME/.claude.json:$HOME/.claude.json" \
-            -v "$HOME/.cache/claude-sandbox/nix:$HOME/.cache/nix" \
-            -v /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro \
+            -v "$HOME/.claude:/root/.claude" \
+            -v "$HOME/.claude.json:/root/.claude.json" \
             -v "$PWD:$PWD" \
+            -v "$PWD/.git:$PWD/.git:ro" \
             -w "$PWD" \
-            -e PATH="/etc/profiles/per-user/$user_name/bin:/run/current-system/sw/bin" \
+            -e HOME=/root \
+            -e IS_SANDBOX=1 \
+            -e NIX_REMOTE=daemon \
+            -e COLORTERM \
+            -e TERM_PROGRAM \
+            -e SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt \
+            -e PATH="$(readlink -f "/etc/profiles/per-user/$USER")/bin:$(readlink -f /run/current-system)/sw/bin" \
             claude-sandbox:latest \
             ${pkgs.claude-code}/bin/claude "$@"
         '')
