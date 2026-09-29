@@ -44,7 +44,7 @@
             -e SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt \
             -e PATH="$(readlink -f "/etc/profiles/per-user/$USER")/bin:$(readlink -f /run/current-system)/sw/bin" \
             claude-sandbox:latest \
-            ${pkgs.claude-code}/bin/claude "$@"
+            ${pkgs.claude-code}/bin/claude --dangerously-skip-permissions "$@"
         '')
       ];
     };
