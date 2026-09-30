@@ -30,7 +30,7 @@ in
         window-inherit-working-directory = false;
         resize-overlay = "never";
 
-        background-opacity = globals.opacity;
+        background-opacity = globals.opacity.primary;
         background = colors.bg;
         foreground = colors.fg;
         selection-background = "cell-foreground";

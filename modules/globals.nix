@@ -28,7 +28,11 @@
       br_violet = "#b891f5";
     };
 
-    opacity = 0.8;
+    opacity = {
+      primary = 0.8;
+      secondary = 0.9;
+      selection = 0.2;
+    };
 
     font = {
       mono = "MonaspiceAr Nerd Font Mono";
