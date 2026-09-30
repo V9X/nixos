@@ -53,10 +53,10 @@
     };
 
     keys = {
-      left = "h";
-      up = "k";
-      down = "j";
-      right = "l";
+      left = "a";
+      up = "w";
+      down = "s";
+      right = "d";
     };
   };
 }
