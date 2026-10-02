@@ -53,8 +53,10 @@ in
           "window.openFilesInNewWindow" = "default";
 
           "editor.fontFamily" = "'${globals.font.mono}', monospace";
+          "editor.fontSize" = globals.font.size * 4.0 / 3;
           "editor.fontLigatures" = lib.concatMapStringsSep ", " (f: "'${f}'") globals.font.mono_features;
           "terminal.integrated.fontFamily" = "'${globals.font.mono_wide}', monospace";
+          "terminal.integrated.fontSize" = globals.font.size * 4.0 / 3;
           "terminal.integrated.enableKittyKeyboardProtocol" = false;
 
           "nix.enableLanguageServer" = true;
