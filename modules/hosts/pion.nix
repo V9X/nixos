@@ -8,6 +8,9 @@
     networking.hostName = "pion";
     system.stateVersion = "26.05";
 
+    boot.kernelModules = [ "nct6775" ];
+    services.hardware.openrgb.enable = true;
+
     fileSystems = {
       "/" = {
         device = "/dev/disk/by-label/nixos";
