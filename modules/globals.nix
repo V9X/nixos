@@ -29,8 +29,7 @@
     };
 
     opacity = {
-      primary = 0.8;
-      secondary = 0.9;
+      primary = 0.85;
       selection = 0.2;
     };
 
