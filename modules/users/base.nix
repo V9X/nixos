@@ -11,6 +11,7 @@ let
   chosen = with aspects; [
     btop
     claude
+    desktop-niri
     discord
     vscodium
     helix
@@ -19,7 +20,6 @@ let
     gaming
     ghostty
     git
-    legacy
     mime
     mission-center
     mpv

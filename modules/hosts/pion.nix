@@ -40,6 +40,23 @@
         options = [ "umask=0077" ];
       };
     };
+
+    home-manager.sharedModules = [
+      {
+        wayland.windowManager.niri.extraConfig = ''
+          output "DP-1" {
+            mode "3440x1440@144"
+            position x=0 y=-411
+            variable-refresh-rate on-demand=true
+            focus-at-startup
+
+            hot-corners {
+              off
+            }
+          }
+        '';
+      }
+    ];
   };
 
   flake.nixosConfigurations.pion = inputs.nixpkgs.lib.nixosSystem {
