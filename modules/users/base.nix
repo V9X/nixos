@@ -32,6 +32,7 @@ let
     yazi
     zoxide
     virtualisation
+    theme
   ];
 in
 {
