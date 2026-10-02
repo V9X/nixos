@@ -49,6 +49,7 @@ in
         "misc-small-toolbar-icons" = false;
         "misc-expandable-folders" = true;
         "misc-case-sensitive" = true;
+        "misc-highlighting-enabled" = true;
 
         "last-toolbar-items" =
           "menu:1,back:1,forward:1,new-tab:0,toggle-split-view:1,location-bar:1,search:1";
