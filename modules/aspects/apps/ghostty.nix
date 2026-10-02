@@ -21,9 +21,11 @@ in
         adjust-cursor-thickness = 1;
         adjust-cursor-height = -1;
         right-click-action = "copy";
+        copy-on-select = false;
 
         shell-integration-features = "ssh-env";
         notify-on-command-finish = "unfocused";
+        app-notifications = "no-clipboard-copy";
 
         window-padding-balance = true;
         window-padding-color = "extend";
