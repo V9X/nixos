@@ -9,6 +9,7 @@ let
       });
 
   chosen = with aspects; [
+    btop
     claude
     discord
     vscodium
@@ -20,6 +21,7 @@ let
     git
     legacy
     mime
+    mission-center
     mpv
     nh
     python
