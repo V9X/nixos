@@ -65,6 +65,7 @@ in
             "nixfmt"
             "--strict"
           ];
+          "nix.hiddenLanguageServerErrors" = [ "textDocument/documentSymbol" ];
 
           "[nix]" = {
             "editor.defaultFormatter" = "jnoortheen.nix-ide";
