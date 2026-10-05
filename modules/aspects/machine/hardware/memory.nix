@@ -11,5 +11,7 @@
     boot.kernel.sysctl = {
       "vm.swappiness" = 180;
     };
+
+    systemd.oomd.enableUserSlices = true;
   };
 }
