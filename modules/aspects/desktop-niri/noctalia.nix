@@ -164,6 +164,10 @@ in
           locked_timeout = 30;
           action = "screen_off";
         };
+        suspend = {
+          locked_timeout = 900;
+          action = "suspend";
+        };
       };
 
       settings.lockscreen = {
