@@ -12,13 +12,12 @@
       colors = pkgs.writeText "colors.scss" ''
         $window:            rgba(${bg}, ${toString primary});
         $bar:               rgba(${fg}, ${toString (selection / 4)});
-        $header:            $bar;
         $surface:           rgba(lighten(${bg}, 12%), ${toString primary});
         $selection:         rgba(${fg}, ${toString selection});
         $overlay-hover:     gtkalpha(currentColor, ${toString (selection / 2)});
         $popover:           $surface;
-        $titlebar:          $bar;
-        $titlebar-backdrop: $bar;
+        $titlebar:          mix(${fg}, $window, alpha($bar) * 100%);
+        $titlebar-backdrop: $titlebar;
         $background:        transparent;
         $base:              transparent;
         $base-alt:          transparent;
@@ -34,13 +33,9 @@
 
         .background { background-color: $window; }
 
-        .background > .titlebar,
-        .background > .titlebar:backdrop {
-          background-color: $header;
-        }
-
         toolbar,
-        menubar {
+        menubar,
+        menubar:backdrop {
           background-color: $bar;
         }
 
@@ -62,15 +57,15 @@
         menu menuitem { padding: 6px 12px; }
         menu separator { margin: 4px 6px; }
 
-        @define-color theme_selected_bg_color #{$selection};
+        @define-color theme_selected_bg_color #{mix(${fg}, ${bg}, alpha($selection) * 200%)};
         @define-color theme_selected_fg_color #{$text};
-        @define-color theme_unfocused_selected_bg_color #{$selection};
-        @define-color theme_unfocused_selected_fg_color #{$text};
       '';
 
       gtk4 = pkgs.writeText "gtk4.scss" ''
         @define-color window_bg_color #{$window};
         @define-color dialog_bg_color #{$surface};
+        @define-color headerbar_bg_color #{$bar};
+        @define-color headerbar_backdrop_color #{$bar};
       '';
 
       colloid =
@@ -83,8 +78,6 @@
           ];
         }).overrideAttrs
           (prev: {
-            pname = "${prev.pname}-translucent";
-
             postPatch = prev.postPatch + ''
               sed -i '/apps\/xfce/d' src/sass/gtk/_apps-3.0.scss
               echo '$white: ${fg}; $black: ${bg};' >> src/sass/_color-palette-default.scss
@@ -102,7 +95,6 @@
       icons =
         pkgs.runCommandLocal "icon-theme"
           {
-            nativeBuildInputs = [ pkgs.gtk3 ];
             src = pkgs.fetchFromGitHub {
               owner = "musqz";
               repo = "beautysolar-icon-theme";
@@ -129,8 +121,6 @@
               -e '/^\[places\/16]/,/^\[/ s|^MaxSize=.*|MaxSize=31|' \
               -e '/^\[places\/48]/,/^\[/ s|^MinSize=.*|MinSize=16|' \
               index.theme > "$dir/index.theme"
-
-            gtk-update-icon-cache --force --quiet "$dir"
           '';
     in
     {
