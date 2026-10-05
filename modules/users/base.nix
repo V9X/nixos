@@ -20,6 +20,7 @@ let
     gaming
     ghostty
     git
+    libreoffice
     mime
     mission-center
     mpv
