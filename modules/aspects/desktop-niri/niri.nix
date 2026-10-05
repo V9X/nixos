@@ -93,12 +93,25 @@ in
         "Mod+Alt+${keys.down}".switch-preset-window-height-back = { };
         "Mod+Alt+${keys.up}".switch-preset-window-height = { };
 
+        "Mod+Alt+1".set-column-width = "100%";
+        "Mod+Alt+2".set-window-height = "50%";
+
         "Mod+Ctrl+${keys.left}".consume-or-expel-window-left = { };
         "Mod+Ctrl+${keys.right}".consume-or-expel-window-right = { };
         "Mod+Ctrl+${keys.down}".move-workspace-down = { };
         "Mod+Ctrl+${keys.up}".move-workspace-up = { };
         "Mod+Ctrl+Q".move-workspace-to-monitor-previous = { };
         "Mod+Ctrl+E".move-workspace-to-monitor-next = { };
+
+        "Mod+Ctrl+1".move-workspace-to-index = 1;
+        "Mod+Ctrl+2".move-workspace-to-index = 2;
+        "Mod+Ctrl+3".move-workspace-to-index = 3;
+        "Mod+Ctrl+4".move-workspace-to-index = 4;
+        "Mod+Ctrl+5".move-workspace-to-index = 5;
+        "Mod+Ctrl+6".move-workspace-to-index = 6;
+        "Mod+Ctrl+7".move-workspace-to-index = 7;
+        "Mod+Ctrl+8".move-workspace-to-index = 8;
+        "Mod+Ctrl+9".move-workspace-to-index = 9;
 
         "Mod+WheelScrollDown".focus-column-right = { };
         "Mod+WheelScrollUp".focus-column-left = { };
