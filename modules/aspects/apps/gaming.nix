@@ -9,7 +9,10 @@
   };
 
   flake.modules.homeManager.gaming = { pkgs, ... }: {
-    home.packages = [ (pkgs.heroic.override { extraEnv.MANGOHUD = true; }) ];
+    home.packages = [
+      (pkgs.heroic.override { extraEnv.MANGOHUD = true; })
+      pkgs.dolphin-emu
+    ];
 
     xdg.configFile."heroic/tools/proton/GE-Proton".source = pkgs.proton-ge-bin.steamcompattool;
 
