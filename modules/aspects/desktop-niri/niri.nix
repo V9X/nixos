@@ -9,6 +9,8 @@ in
       enable = true;
       useNautilus = false;
     };
+
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
   flake.modules.homeManager.desktop-niri = { lib, pkgs, ... }: {

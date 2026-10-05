@@ -31,7 +31,6 @@ let
     swayimg
     thunar
     vlc
-    wayland
     yazi
     zoxide
     virtualisation
