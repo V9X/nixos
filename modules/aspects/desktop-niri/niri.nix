@@ -158,6 +158,10 @@ in
           }
         }
 
+        hotkey-overlay {
+          skip-at-startup
+        }
+
         blur {
           passes 4
           offset 3.0
