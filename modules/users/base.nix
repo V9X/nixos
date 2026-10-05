@@ -25,6 +25,7 @@ let
     mpv
     nh
     python
+    qalculate
     qbittorrent
     rust
     swayimg
