@@ -24,6 +24,7 @@ let
     mission-center
     mpv
     nh
+    obs
     python
     qalculate
     qbittorrent
