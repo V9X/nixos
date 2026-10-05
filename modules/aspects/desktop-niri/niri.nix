@@ -198,6 +198,32 @@ in
           place-within-backdrop true
         }
 
+        // TODO: wywalić jak będzie się dało sensownie ogarnąć to samą noctalią
+        layer-rule {
+          match namespace="^noctalia-bar-"
+
+          shadow {
+            on
+            softness 20
+            spread 20
+            offset x=0 y=-48
+            draw-behind-window true
+            color "#00000066"
+          }
+
+          background-effect {
+            blur false
+          }
+        }
+
+        layer-rule {
+          match namespace="^noctalia-"
+
+          background-effect {
+            xray false
+          }
+        }
+
         window-rule {
           geometry-corner-radius 10
           clip-to-geometry true
