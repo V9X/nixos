@@ -3,6 +3,7 @@
     imports = with inputs.self.modules.nixos; [
       machine
       v9x
+      comfyui
     ];
 
     networking.hostName = "pion";
