@@ -10,6 +10,7 @@
     system.stateVersion = "26.05";
 
     boot.kernelModules = [ "nct6775" ];
+    boot.kernelParams = [ "pcie_aspm.policy=performance" ];
     services.hardware.openrgb.enable = true;
 
     fileSystems = {
