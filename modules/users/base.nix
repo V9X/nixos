@@ -21,6 +21,7 @@ let
     ghostty
     git
     libreoffice
+    localsend
     mime
     mission-center
     mpv
