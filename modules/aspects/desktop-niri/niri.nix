@@ -94,7 +94,7 @@ in
         "Mod+Alt+${keys.up}".switch-preset-window-height = { };
 
         "Mod+Alt+1".set-column-width = "100%";
-        "Mod+Alt+2".set-window-height = "50%";
+        "Mod+Alt+2".set-column-width = "50%";
 
         "Mod+Ctrl+${keys.left}".consume-or-expel-window-left = { };
         "Mod+Ctrl+${keys.right}".consume-or-expel-window-right = { };
