@@ -122,6 +122,19 @@
               -e '/^\[places\/48]/,/^\[/ s|^MinSize=.*|MinSize=16|' \
               index.theme > "$dir/index.theme"
           '';
+
+      qtct = {
+        Appearance = {
+          custom_palette = true;
+          color_scheme_path = "${pkgs.qt6Packages.qt6ct}/share/qt6ct/colors/darker.conf";
+          standard_dialogs = "xdgdesktopportal";
+        };
+
+        Fonts = {
+          general = ''"${globals.font.sans},${toString globals.font.size}"'';
+          fixed = ''"${globals.font.mono},${toString globals.font.size}"'';
+        };
+      };
     in
     {
       gtk = {
@@ -140,6 +153,13 @@
           name = "icons";
           package = icons;
         };
+      };
+
+      qt = {
+        enable = true;
+        platformTheme.name = "qtct";
+        qt5ctSettings = qtct;
+        qt6ctSettings = qtct;
       };
 
       home.pointerCursor = {
