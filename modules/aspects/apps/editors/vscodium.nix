@@ -52,6 +52,8 @@ in
 
           "window.openFilesInNewWindow" = "default";
 
+          "editor.formatOnSave" = true;
+
           "editor.fontFamily" = "'${globals.font.mono}', monospace";
           "editor.fontSize" = globals.font.size * 4.0 / 3;
           "editor.fontLigatures" = lib.concatMapStringsSep ", " (f: "'${f}'") globals.font.mono_features;
@@ -69,7 +71,6 @@ in
 
           "[nix]" = {
             "editor.defaultFormatter" = "jnoortheen.nix-ide";
-            "editor.formatOnSave" = true;
             "editor.tabSize" = 2;
           };
 
@@ -77,7 +78,6 @@ in
           "basedpyright.analysis.typeCheckingMode" = "standard";
           "[python]" = {
             "editor.defaultFormatter" = "charliermarsh.ruff";
-            "editor.formatOnSave" = true;
             "editor.codeActionsOnSave" = {
               "source.fixAll.ruff" = "explicit";
               "source.organizeImports.ruff" = "explicit";
@@ -85,6 +85,9 @@ in
           };
 
           "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
+          "[rust]" = {
+            "editor.defaultFormatter" = "rust-lang.rust-analyzer";
+          };
         };
       };
     };
