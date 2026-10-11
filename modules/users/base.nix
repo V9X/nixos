@@ -17,6 +17,7 @@ let
     helix
     firefox
     fish
+    frame
     gaming
     ghostty
     git
