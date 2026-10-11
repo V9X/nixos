@@ -81,6 +81,32 @@ in
               <startup-notify/>
               <directories/>
             </action>
+            <action>
+              <icon>edit-copy</icon>
+              <name>copy as webp</name>
+              <unique-id>copy-as-webp</unique-id>
+              <command>${lib.getExe pkgs.imagemagick} %f -define webp:lossless=true $XDG_RUNTIME_DIR/%n.webp &amp;&amp; ${lib.getExe' pkgs.wl-clipboard "wl-copy"} -t text/uri-list file://$XDG_RUNTIME_DIR/%n.webp</command>
+              <patterns>*.jxl</patterns>
+              <image-files/>
+            </action>
+            <action>
+              <icon>image-x-generic</icon>
+              <name>effort 8</name>
+              <submenu>convert to jxl</submenu>
+              <unique-id>convert-to-jxl</unique-id>
+              <command>for f in %F; do ${lib.getExe' pkgs.libjxl "cjxl"} -d 0 -e 8 "$f" "''${f%%.*}.jxl"; done</command>
+              <patterns>*.jpg;*.JPG;*.jpeg;*.JPEG;*.png;*.PNG;*.gif</patterns>
+              <image-files/>
+            </action>
+            <action>
+              <icon>image-x-generic</icon>
+              <name>effort 10</name>
+              <submenu>convert to jxl</submenu>
+              <unique-id>convert-to-jxl-e10</unique-id>
+              <command>for f in %F; do ${lib.getExe' pkgs.libjxl "cjxl"} -d 0 -e 10 "$f" "''${f%%.*}.jxl"; done</command>
+              <patterns>*.jpg;*.JPG;*.jpeg;*.JPEG;*.png;*.PNG;*.gif</patterns>
+              <image-files/>
+            </action>
           </actions>
         '';
       };
