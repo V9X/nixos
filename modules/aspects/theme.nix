@@ -147,6 +147,7 @@
         };
 
         theme = gtkTheme;
+        gtk3.extraConfig.gtk-menu-images = true;
         gtk4.theme = gtkTheme;
 
         iconTheme = {
