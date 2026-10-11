@@ -29,7 +29,7 @@ in
           directory = "~/Pictures/screenshots";
           save_to_file = false;
           pipe_to_command = true;
-          pipe_command = ''exec ${lib.getExe' pkgs.libjxl "cjxl"} - "''${NOCTALIA_SCREENSHOT_PATH%.png}.jxl" -d 0 --quiet'';
+          pipe_command = ''exec ${lib.getExe' pkgs.libjxl "cjxl"} - "''${NOCTALIA_SCREENSHOT_PATH%.png}.jxl" -d 0 -e 8 --quiet'';
         };
 
         panel = {
