@@ -23,7 +23,7 @@ let
     git
     libreoffice
     localsend
-    mime
+    xdg
     mission-center
     mpv
     nh
