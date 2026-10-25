@@ -26,6 +26,8 @@
             "e" = "layer(shift)";
             "r" = "sysrq";
             "x" = "grave";
+            "c" = "end";
+            "v" = "delete";
             "leftbrace" = "volumedown";
             "rightbrace" = "volumeup";
             "backslash" = "mute";
