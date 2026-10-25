@@ -30,6 +30,10 @@ in
           _props.allow-when-locked = true;
           spawn-sh = "noctalia msg session lock";
         };
+        "Mod+K" = {
+          _props.allow-when-locked = true;
+          spawn-sh = "noctalia msg dpms-off";
+        };
         "Mod+T".close-window = { };
         "Print".spawn-sh = "noctalia msg screenshot-region";
         "Mod+F".fullscreen-window = { };
@@ -152,6 +156,10 @@ in
           keyboard {
             repeat-delay 300
             repeat-rate 20
+          }
+
+          touchpad {
+            tap
           }
 
           mouse {
