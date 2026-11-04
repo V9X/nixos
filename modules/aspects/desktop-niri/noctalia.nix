@@ -87,7 +87,6 @@ in
           "control-center"
           "launcher"
           "workspaces"
-          "active_window"
         ];
         center = [ ];
         end = [
