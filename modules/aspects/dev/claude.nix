@@ -33,8 +33,8 @@
             -v /etc/nix/registry.json:/etc/nix/registry.json:ro \
             -v "$HOME/.claude:/root/.claude" \
             -v "$HOME/.claude.json:/root/.claude.json" \
+            -v "$HOME/.config/git/config:/root/.config/git/config:ro" \
             -v "$PWD:$PWD" \
-            -v "$PWD/.git:$PWD/.git:ro" \
             -w "$PWD" \
             -e HOME=/root \
             -e IS_SANDBOX=1 \
