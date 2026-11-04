@@ -161,7 +161,7 @@ in
         };
         screen-off = {
           timeout = 660;
-          locked_timeout = 30;
+          locked_timeout = 15;
           action = "screen_off";
         };
         suspend = {
