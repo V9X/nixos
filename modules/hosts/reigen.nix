@@ -12,7 +12,6 @@
     services.asusd.enable = true;
 
     networking.networkmanager.wifi.powersave = false;
-    boot.kernelParams = [ "cfg80211.ieee80211_regdom=PL" ];
     services.logind.settings.Login.HandlePowerKey = "suspend";
 
     fileSystems = {
