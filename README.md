@@ -32,7 +32,7 @@
 
 2. Flash U-Boot to the SPI flash:
    ```sh
-   nix build .#nixosConfigurations.opi.config.system.build.uboot
+   nix build .#nixosConfigurations.inuyashiki.config.system.build.uboot
    curl -Lo /tmp/loader.bin https://dl.radxa.com/rock5/sw/images/loader/rk3588_spl_loader_v1.15.113.bin
    sudo -s
    nix shell nixpkgs#rkdeveloptool

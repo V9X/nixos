@@ -1,9 +1,9 @@
 { inputs, ... }: {
-  flake.modules.nixos.opi = { pkgs, ... }: {
+  flake.modules.nixos.inuyashiki = { pkgs, ... }: {
     imports = [ inputs.self.modules.nixos.machine ];
 
     nixpkgs.hostPlatform = "aarch64-linux";
-    networking.hostName = "opi";
+    networking.hostName = "inuyashiki";
     system.stateVersion = "26.11";
 
     boot.loader.grub.enable = false;
@@ -15,7 +15,7 @@
     system.build.uboot = pkgs.ubootOrangePi5Plus;
   };
 
-  flake.nixosConfigurations.opi = inputs.nixpkgs.lib.nixosSystem {
-    modules = [ inputs.self.modules.nixos.opi ];
+  flake.nixosConfigurations.inuyashiki = inputs.nixpkgs.lib.nixosSystem {
+    modules = [ inputs.self.modules.nixos.inuyashiki ];
   };
 }
